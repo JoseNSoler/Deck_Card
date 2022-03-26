@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { connect, useDispatch, useSelector } from 'react-redux';
 import { random } from '../slice/cardSlice'
-import { fetchRandom, onlyNumbers, onlyNumbers2 } from '../actions'
+import { fetchRandom, onlyNumbers, onlySuit } from '../actions'
 import List from 'react-list-select'
 import Select from 'react-select'
 import makeAnimated from 'react-select/animated';
@@ -38,19 +38,18 @@ const Result = (props) => {
 
   const listClick = (e) => {
     console.log(e)
-    e.preventDefault();
+
     console.log("asdasdasdasd")
+    props.dispatch(onlySuit(setState, e))
     
-  };
+  }
 
   const Lists = () => {
     return (
       <div>
         <Select 
-        closeMenuOnSelect={false}
         components={animatedComponents}
-        defaultValue={[optionsSuit[0], optionsSuit[1]]}
-        isMulti
+        defaultValue={[optionsSuit[0]]}
         options={optionsSuit}
         onChange={(e) => listClick(e)}/>
       </div>
