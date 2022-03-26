@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { connect, useDispatch, useSelector } from 'react-redux';
 import { random } from '../slice/cardSlice'
-import { fetchRandom, onlyNumbers, onlySuit } from '../actions'
+import { fetchRandom, onlyNumbers, onlySuit, suitAndNumber } from '../actions'
 import List from 'react-list-select'
 import Select from 'react-select'
 import makeAnimated from 'react-select/animated';
@@ -12,20 +12,6 @@ import makeAnimated from 'react-select/animated';
 
 
 const Result = (props) => {
-
-  const animatedComponents = makeAnimated();
-
-  const [state, setState] = useState();
-
-  const [btnCheck, setBtnCheck] = useState(false)
-
-  const [checked, setChecked] = useState(['numeros']);
-
-  const [listChecked, setListChecked] = useState([]);
-
-  let itemsSuit = ['DIAMONDS', 'SPADES', 'HEARTS', 'CLUBS'];
-
-
   const optionsSuit = [
     { value: 'DIAMONDS', label: 'Diamonds' },
     { value: 'SPADES', label: 'Spades' },
@@ -34,10 +20,26 @@ const Result = (props) => {
   ]
 
 
+  const animatedComponents = makeAnimated();
+
+  const [state, setState] = useState();
+
+  const [btnCheck, setBtnCheck] = useState(false);
+
+  const [checked, setChecked] = useState(['numeros']);
+
+  const [ listChecked, setListChecked ] = useState(optionsSuit[0]);
+
+  let itemsSuit = ['DIAMONDS', 'SPADES', 'HEARTS', 'CLUBS'];
+
+
+  
+
   const [suit, setSuit] = useState()
 
   const listClick = (e) => {
     console.log(e)
+    setListChecked(e);
 
     console.log("asdasdasdasd")
     props.dispatch(onlySuit(setState, e, btnCheck))
@@ -67,11 +69,12 @@ const Result = (props) => {
 
     e.preventDefault();
 
-    console.log(btnCheck)
+    
 
-    if (!checked.includes("numeros")) props.dispatch(onlyNumbers(setState));
-    else if(btnCheck.length() !== 0) props.dispatch()
-    else props.dispatch(fetchRandom(setState))
+    if (checked.includes("numeros")) props.dispatch(fetchRandom(setState));
+    else if (btnCheck) props.dispatch(suitAndNumber(setState, btnCheck, listChecked))
+    else if (!btnCheck)  props.dispatch(onlySuit(setState, listChecked, btnCheck))
+    else props.dispatch(onlyNumbers(setState));
   };
 
 

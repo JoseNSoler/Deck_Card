@@ -42,19 +42,22 @@ export const onlySuit = (state, change, numero) => (dispatch) => {
 }
 
 
-export const suitAndNumber = (state, change, numero) => (dispatch) => {
+export const suitAndNumber = (state, numero, listChecked) => (dispatch) => {
 
-    console.log(numero)
     
-    return fetch(`http://localhost:8080/cards/suit/${encodeURIComponent(change["value"])}`, {
+    var bool = (numero !== false)
+    console.log(listChecked)
+    
+    return fetch(`http://localhost:8080/cards/querySuitNumber/?suit=${encodeURIComponent(listChecked["value"])}&number=${encodeURIComponent( bool)}`, {
         method: 'GET', // *GET, POST, PUT, DELETE, etc.
         headers: {
             'Content-Type': 'application/json'
         } // body data type must match "Content-Type" header
     }).then(response => response.json())
       .then(json => {
-          dispatch({ type: "Suit", data: json });
+          dispatch({ type: "SuitNumber", data: json });
         })
+        
         
 }
 

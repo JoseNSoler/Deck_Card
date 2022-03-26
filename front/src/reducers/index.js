@@ -17,6 +17,9 @@ function random(state = initialState, action) {
         case "Suit": {
             return { result: action.data }
         }
+        case "SuitNumber": {
+            return { result: action.data }
+        }
 
         default: return state
     }
