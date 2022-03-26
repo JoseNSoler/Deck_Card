@@ -7,11 +7,28 @@
 
 *Base de datos incorporada desde MongoDB atlas, en donde se encuentran las cartas con sus respectivas imagenes URL*
 
+Solucion implementando Backend(Java-SpringBoot, MongoAtlas) y FrontEnd(ReactJs, Bootstrap)
+
 <p align="center">
 <img src="https://user-images.githubusercontent.com/59320487/160238478-fe497543-ae1e-4418-8fc4-bfa0c5a9c7e2.png">
 </p>
 
 oprima el boton RANDOM y generara una carta al azar usando patrones digital random
+
+
+Primero se debe ejecutar el back end basado en SpringBoot-Mongo, para ello se debe desplazar hacia la carpeta back, y realizar:
+
+    Para servidores Linux, el codigo se ejecuta desde el archivo mvnw
+    Para servidores con distrubuciones Windows, el codigo se ejecuta desde el archivo mvnw.cmd desde una consola de comandos (cmd) o ventana PowerShell atravez del comando "./mvnw.cmd spring-boot:run"
+
+seguidamente debe inicar el servidor front ejecutado por React, para ello se debe desplazar hacia la carpeta front, y ejecutar:
+
+
+- npm install
+
+- npm start
+
+
 
 
 
