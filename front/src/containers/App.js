@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
-import From from '../components/From'
 import Result from '../components/Result'
 
 class App extends Component {// component stateful
   render() {
     return (
-      <div>
-        <h3>Lista Random</h3>
-        <p>Sistema Ramdom - Demo</p>
-        <From />
+      <div className='main center-block container-fluid'>
+        <h3>Generar carta al azar</h3>
         <Result />
       </div>
     )

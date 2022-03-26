@@ -1,4 +1,19 @@
-# Mentoring dia 35
+# Generador de cartas al azar
+
+<p align="center">
+<img src="https://www.sofka.com.co/wp-content/uploads/2021/02/sofkau-logo-horizontal.png">
+</p>
+
+
+*Base de datos incorporada desde MongoDB atlas, en donde se encuentran las cartas con sus respectivas imagenes URL*
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/59320487/160238478-fe497543-ae1e-4418-8fc4-bfa0c5a9c7e2.png">
+</p>
+
+oprima el boton RANDOM y generara una carta al azar usando patrones digital random
+
+
 
 ### TEMARIO: 
 

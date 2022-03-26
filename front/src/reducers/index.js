@@ -1,31 +1,16 @@
 //reducers
 import { combineReducers } from 'redux'
 
+const initialState = {
+    value: {}
+};
 
-function view(state = {
-    loading: false
-}, action) {
-    switch (action.type) {
-        //TODO: refactorizar
-        case "view-loading": {
-            return {
-                loading: true
-            }
-        }
-        case "view-loaded": {
-            return {
-                loading: false
-            }
-        }
-        default: return state
-    }
-}
 
 function random(state = {
     result: {}
 }, action) {
     switch (action.type) {
-        case "random-result": {
+        case "Random": {
             return { result: action.data }
         }
         default: return state
@@ -34,7 +19,7 @@ function random(state = {
 
 
 const rootReducer = combineReducers({
-    view, random
+    random
 })
 
 export default rootReducer
