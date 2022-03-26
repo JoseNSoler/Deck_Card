@@ -10,4 +10,10 @@ import java.util.List;
 public interface ICardService {
     public DTOCard save();
     public Mono<Card> getRandom();
+    public Mono<Card> getBySuit(String suit);
+    public Mono<Card> getByValueAndSuit(String value, String suit);
+
+    public Mono<Card> getByNumbers();
 }
+
+

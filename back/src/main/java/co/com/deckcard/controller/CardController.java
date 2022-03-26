@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
@@ -27,4 +28,27 @@ public class CardController {
     public Mono<Card> getRandom(){
         return cardService.getRandom();
     }
+
+
+    @GetMapping(path = "/suit/{str}")
+    public Mono<Card> getBySuit(@PathVariable("str") String suit){
+        return cardService.getBySuit(suit);
+    }
+
+
+    @GetMapping(path = "/query")
+    public Mono<Card> getBySuitAndByValue(@RequestParam("suit") Optional<String> suit,
+                                          @RequestParam("value") Optional<String> value){
+
+        if(suit.isPresent() && value.isPresent()) return cardService.getByValueAndSuit(value.get(), suit.get());
+        return null;
+    }
+
+    @GetMapping("/onlyNumbers")
+    public Mono<Card> getOnlyNumbers(){
+        return cardService.getByNumbers();
+    }
+
+
+
 }

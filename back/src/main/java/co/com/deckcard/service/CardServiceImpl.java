@@ -21,6 +21,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 
+import java.io.Console;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
@@ -51,5 +52,28 @@ public class CardServiceImpl implements ICardService{
                         new DigitalRandom().nextInt(52)
                 );
 
+
     }
+
+    @Override
+    public Mono<Card> getBySuit(String suit){
+        return cardRepository.findBySuit(suit).elementAt(new DigitalRandom().nextInt(13));
+    }
+
+    @Override
+    public Mono<Card> getByValueAndSuit(String value, String suit){
+        return cardRepository.findByValueAndSuit(value, suit).elementAt(0);
+    }
+
+
+    @Override
+    public Mono<Card> getByNumbers(){
+
+        return cardRepository.findAll().filter(value ->
+                value.getValue().matches("[0-9]+") && value.getValue().length() < 3).elementAt(
+                    new DigitalRandom().nextInt(35)
+        );
+    }
+
 }
+
