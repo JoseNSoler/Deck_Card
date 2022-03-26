@@ -36,8 +36,31 @@
 			<artifactId>reactor-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.mashape.unirest</groupId>
+			<artifactId>unirest-java</artifactId>
+			<version>1.4.9</version>
+		</dependency>
 
- </dependencies>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.9.0</version>
+		</dependency>
+		<dependency>
+			<groupId>net.minidev</groupId>
+			<artifactId>json-smart</artifactId>
+			<version>2.4.7</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.nullschool</groupId>
+			<artifactId>drnglib</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+	</dependencies>
 
 	<build>
 		<plugins>
