@@ -5,6 +5,7 @@ import { fetchRandom, onlyNumbers, onlySuit, suitAndNumber } from '../actions'
 import List from 'react-list-select'
 import Select from 'react-select'
 import makeAnimated from 'react-select/animated';
+import { Container, Row, Col } from 'react-bootstrap';
 
 
 
@@ -28,12 +29,12 @@ const Result = (props) => {
 
   const [checked, setChecked] = useState(['numeros']);
 
-  const [ listChecked, setListChecked ] = useState(optionsSuit[0]);
+  const [listChecked, setListChecked] = useState(optionsSuit[0]);
 
   let itemsSuit = ['DIAMONDS', 'SPADES', 'HEARTS', 'CLUBS'];
 
 
-  
+
 
   const [suit, setSuit] = useState()
 
@@ -69,11 +70,11 @@ const Result = (props) => {
 
     e.preventDefault();
 
-    
+
 
     if (checked.includes("numeros")) props.dispatch(fetchRandom(setState));
     else if (btnCheck) props.dispatch(suitAndNumber(setState, btnCheck, listChecked))
-    else if (!btnCheck)  props.dispatch(onlySuit(setState, listChecked, btnCheck))
+    else if (!btnCheck) props.dispatch(onlySuit(setState, listChecked, btnCheck))
     else props.dispatch(onlyNumbers(setState));
   };
 
@@ -100,35 +101,40 @@ const Result = (props) => {
 
 
   return (
-    <div className='containerCard'>
-      <form onSubmit={onSubmit} className="forms">
-        <div>
-          <a>
-            Solo numeros
-          </a>
-          <input type='checkbox' checked={btnCheck} onChange={(e) => handleChange()} value='numeros' >
+    <Container>
+    <Row xs={1} md={2}>
 
-          </input>
-        </div>
-        <div className='listaSuit'>
-          <a>Por genero de carta</a>
-          {Lists()}
-        </div>
+        <Col>
+          <form onSubmit={onSubmit} className="forms">
+            <div>
+              <a>
+                Solo numeros
+              </a>
+              <input type='checkbox' checked={btnCheck} onChange={(e) => handleChange()} value='numeros' >
 
-
-        <button type='submit' className='btn btn-primary btn-lg'
-          aria-label="Increment value">
-          CalcularNueva
-        </button>
-      </form>
-
-      <div className='imagen'>
-
-        <img src={props.data.image} />
-      </div>
+              </input>
+            </div>
+            <div className='listaSuit'>
+              <a>Por genero de carta</a>
+              {Lists()}
+            </div>
 
 
-    </div>
+            <button type='submit' className='btn btn-primary btn-lg'
+              aria-label="Increment value">
+              CalcularNueva
+            </button>
+          </form>
+        </Col>
+
+        <Col className='imagenCol'>
+          <div className='imagen'>
+
+            <img src={props.data.image} />
+          </div>
+        </Col>
+    </Row>
+    </Container>
   );
 }
 

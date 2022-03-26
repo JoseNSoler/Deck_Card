@@ -1,5 +1,9 @@
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
 
+body{
+    background-color: #966138d3;
+}
+
 .main{
     display: flex;
     min-height: 100%;
@@ -8,17 +12,21 @@
     height: auto;
 
     flex-direction: column;
-    margin: 8%;
 
+}
+
+.title{
+    margin: 25px;
+    text-align: center;
 }
 
 .containerCard{
     height: 20vh;
-    margin: 5%;
     display: flex;
 }
 
 .listaSuit{
+    width: 177%;
     height: 100px;
     margin-top: 40px;
 }
@@ -27,16 +35,22 @@
     margin-right: 240px;
 }
 
+
 .imagen{
     display: flex;
-    width: 200px;
-    height: 200%;
+    justify-content: center;
+    align-items: center;
+    margin: 6%;
+    display: flex;
+    height: 100%;
+    background-color: #35654d;
+    width: 300px;
 }
 
 
 
 img{
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 80%;
+    max-height: 80%;
     display: block; /* remove extra space below image */
 }

@@ -4,13 +4,14 @@
 <img src="https://www.sofka.com.co/wp-content/uploads/2021/02/sofkau-logo-horizontal.png">
 </p>
 
+*Responsivo en dos medidas, tamaño celular y mayor a celular*
 
 *Base de datos incorporada desde MongoDB atlas, en donde se encuentran las cartas con sus respectivas imagenes URL*
 
 Solucion implementando Backend(Java-SpringBoot, MongoAtlas) y FrontEnd(ReactJs, Redux, Bootstrap)
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/59320487/160247394-9bff2b1e-8628-45c4-bf8f-939b28ebc3b0.png">
+<img src="https://user-images.githubusercontent.com/59320487/160254892-841f2f8e-94d6-4d3b-90b7-5b5fdc176f7f.png">
 </p>
 
 
