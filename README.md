@@ -7,7 +7,7 @@
 
 *Base de datos incorporada desde MongoDB atlas, en donde se encuentran las cartas con sus respectivas imagenes URL*
 
-Solucion implementando Backend(Java-SpringBoot, MongoAtlas) y FrontEnd(ReactJs, Bootstrap)
+Solucion implementando Backend(Java-SpringBoot, MongoAtlas) y FrontEnd(ReactJs, Redux, Bootstrap)
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/59320487/160238478-fe497543-ae1e-4418-8fc4-bfa0c5a9c7e2.png">
@@ -27,8 +27,6 @@ seguidamente debe inicar el servidor front ejecutado por React, para ello se deb
 - npm install
 
 - npm start
-
-
 
 
 
