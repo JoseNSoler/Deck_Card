@@ -14,6 +14,8 @@ public interface ICardService {
     public Mono<Card> getByValueAndSuit(String value, String suit);
 
     public Mono<Card> getByNumbers();
+
+    public Mono<Card> getByValueNumber(String value, Boolean suit);
 }
 
 

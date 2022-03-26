@@ -44,6 +44,14 @@ public class CardController {
         return null;
     }
 
+    @GetMapping(path = "/querySuitNumber")
+    public Mono<Card> getBySuitNumber(@RequestParam("suit") Optional<String> suit,
+                                          @RequestParam("number") Optional<Boolean> value){
+
+        if(suit.isPresent() && value.isPresent()) return cardService.getByValueNumber(suit.get(), value.get());
+        return null;
+    }
+
     @GetMapping("/onlyNumbers")
     public Mono<Card> getOnlyNumbers(){
         return cardService.getByNumbers();

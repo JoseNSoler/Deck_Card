@@ -18,10 +18,10 @@ const Result = (props) => {
   const [state, setState] = useState();
 
   const [btnCheck, setBtnCheck] = useState(false)
-  
+
   const [checked, setChecked] = useState(['numeros']);
 
-  const [ listChecked, setListChecked ] = useState([]);
+  const [listChecked, setListChecked] = useState([]);
 
   let itemsSuit = ['DIAMONDS', 'SPADES', 'HEARTS', 'CLUBS'];
 
@@ -32,26 +32,26 @@ const Result = (props) => {
     { value: 'HEARTS', label: 'Hearts' },
     { value: 'CLUBS', label: 'Clubs' }
   ]
-  
 
-  const [ suit, setSuit ] = useState()
+
+  const [suit, setSuit] = useState()
 
   const listClick = (e) => {
     console.log(e)
 
     console.log("asdasdasdasd")
-    props.dispatch(onlySuit(setState, e))
-    
+    props.dispatch(onlySuit(setState, e, btnCheck))
+
   }
 
   const Lists = () => {
     return (
       <div>
-        <Select 
-        components={animatedComponents}
-        defaultValue={[optionsSuit[0]]}
-        options={optionsSuit}
-        onChange={(e) => listClick(e)}/>
+        <Select
+          components={animatedComponents}
+          defaultValue={[optionsSuit[0]]}
+          options={optionsSuit}
+          onChange={(e) => listClick(e)} />
       </div>
     );
   }
@@ -64,27 +64,28 @@ const Result = (props) => {
 
 
   const onSubmit = (e) => {
-  
+
     e.preventDefault();
 
-    console.log(props)
+    console.log(btnCheck)
 
-    if(!checked.includes("numeros")) props.dispatch(onlyNumbers(setState)) ;
-    else props.dispatch(fetchRandom(setState)) 
+    if (!checked.includes("numeros")) props.dispatch(onlyNumbers(setState));
+    else if(btnCheck.length() !== 0) props.dispatch()
+    else props.dispatch(fetchRandom(setState))
   };
 
 
 
   const handleChange = () => {
-    
-    if(!checked.includes("numeros")) {
+
+    if (!checked.includes("numeros")) {
       setChecked(['numeros'])
       setBtnCheck(!checked);
     }
-    else{ 
+    else {
       console.log("sdasasd")
       setBtnCheck(checked)
-      setChecked(checked.filter( item => item !== "numeros"))
+      setChecked(checked.filter(item => item !== "numeros"))
     }
 
     console.log(checked)
@@ -107,20 +108,22 @@ const Result = (props) => {
           </input>
         </div>
         <div className='listaSuit'>
-        {Lists()}
+          <a>Por genero de carta</a>
+          {Lists()}
         </div>
-        
+
 
         <button type='submit' className='btn btn-primary btn-lg'
-        aria-label="Increment value">
+          aria-label="Increment value">
           CalcularNueva
         </button>
       </form>
 
       <div className='imagen'>
+
         <img src={props.data.image} />
       </div>
-      
+
 
     </div>
   );
@@ -128,10 +131,9 @@ const Result = (props) => {
 
 
 const stateMapToPros = state => {
-  
- return { data: state.random.result}
 
-  
+  return { data: state.random.result }
+
 }
 
 

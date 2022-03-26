@@ -67,6 +67,15 @@ public class CardServiceImpl implements ICardService{
 
 
     @Override
+    public Mono<Card> getByValueNumber(String value, Boolean suit){
+        return (suit) ? cardRepository.findBySuit(value).filter(card ->
+                card.getValue().matches("[0-9]+") && card.getValue().length() < 3).elementAt(new DigitalRandom().nextInt(9)
+        ):
+                cardRepository.findBySuit(value).elementAt(new DigitalRandom().nextInt(13));
+    }
+
+
+    @Override
     public Mono<Card> getByNumbers(){
 
         return cardRepository.findAll().filter(value ->
@@ -74,6 +83,9 @@ public class CardServiceImpl implements ICardService{
                     new DigitalRandom().nextInt(35)
         );
     }
+
+
+
 
 }
 
