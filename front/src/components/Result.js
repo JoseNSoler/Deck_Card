@@ -7,10 +7,12 @@ import { fetchRandom, onlyNumbers } from '../actions'
 const Result = (props) => {
 
   const [state, setState] = useState();
-  const [checked, setChecked] = useState(false);
+
+  const [btnCheck, setBtnCheck] = useState(false)
+  
+  const [checked, setChecked] = useState(['numeros']);
 
   const onClicker = (e) => {
-    console.log(props)
     e.preventDefault();
     props.dispatch(fetchRandom(setState));
   };
@@ -18,13 +20,24 @@ const Result = (props) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(props)
 
-    props.dispatch(onlyNumbers(setState));
+    if(!checked.includes("numeros")) props.dispatch(onlyNumbers(setState)) ;
+    else props.dispatch(fetchRandom(setState)) 
   };
 
   const handleChange = () => {
-    setChecked(!checked)
+    
+    if(!checked.includes("numeros")) {
+      setChecked(['numeros'])
+      setBtnCheck(!checked);
+    }
+    else{ 
+      console.log("sdasasd")
+      setBtnCheck(checked)
+      setChecked(checked.filter( item => item !== "numeros"))
+    }
+
+    console.log(checked)
   }
 
   // <span>{props.data.image}</span>
@@ -36,7 +49,7 @@ const Result = (props) => {
           <a>
             Solo numeros
           </a>
-          <input type='checkbox' checked={checked} onChange={handleChange} >
+          <input type='checkbox' checked={btnCheck} onChange={(e) => handleChange()} value='numeros' >
 
           </input>
         </div>
@@ -61,9 +74,13 @@ const Result = (props) => {
 
 
 const stateMapToPros = state => {
-  return {
-    data: state.random.result && state.numbers.result
-  }
+  
+  
+  if(JSON.stringify(state.numbers.result) === '{}') return { data: state.random.result}
+  
+  if(JSON.stringify(state.random.result) === '{}') return { data: state.numbers.result}
+
+  
 }
 
 

@@ -17,6 +17,8 @@ Solucion implementando Backend(Java-SpringBoot, MongoAtlas) y FrontEnd(ReactJs, 
 <img src="https://user-images.githubusercontent.com/59320487/160242021-7910f437-78d1-4bc3-a018-44d54162aa0c.png">
 </p>
 
+*Para realizar una consulta diferente, porfavor recargar la pagina y seleccionar solo numeros antes de presionar calcularNuevo, si la casilla no esta marcada, se define por defecto traer cartas aleatorias*
+
 oprima el boton RANDOM y generara una carta al azar usando patrones digital random
 
 ACTUALIZACIONES: se puede escoger solo cartas con numeros
