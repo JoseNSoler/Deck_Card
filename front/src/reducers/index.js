@@ -2,24 +2,24 @@
 import { combineReducers } from 'redux'
 
 const initialState = {
-    value: {}
+    result: {}
 };
 
 
-function random(state = {
-    result: {}
-}, action) {
+function random(state = initialState, action) {
     switch (action.type) {
         case "Random": {
             return { result: action.data }
         }
+        case "Numbers": {
+            return { result: action.data }
+        }
+
         default: return state
     }
 }
 
-function numbers(state = {
-    result: {}
-}, action) {
+function numbers(state = initialState, action) {
     switch (action.type) {
         case "Numbers": {
             return { result: action.data }

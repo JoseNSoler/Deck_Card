@@ -21,6 +21,8 @@ const Result = (props) => {
   const onSubmit = (e) => {
     e.preventDefault();
 
+    console.log(props)
+
     if(!checked.includes("numeros")) props.dispatch(onlyNumbers(setState)) ;
     else props.dispatch(fetchRandom(setState)) 
   };
@@ -75,10 +77,7 @@ const Result = (props) => {
 
 const stateMapToPros = state => {
   
-  
-  if(JSON.stringify(state.numbers.result) === '{}') return { data: state.random.result}
-  
-  if(JSON.stringify(state.random.result) === '{}') return { data: state.numbers.result}
+ return { data: state.random.result}
 
   
 }

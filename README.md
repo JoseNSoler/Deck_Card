@@ -17,9 +17,9 @@ Solucion implementando Backend(Java-SpringBoot, MongoAtlas) y FrontEnd(ReactJs, 
 <img src="https://user-images.githubusercontent.com/59320487/160242021-7910f437-78d1-4bc3-a018-44d54162aa0c.png">
 </p>
 
-*Para realizar una consulta diferente, porfavor recargar la pagina y seleccionar solo numeros antes de presionar calcularNuevo, si la casilla no esta marcada, se define por defecto traer cartas aleatorias*
+**Se puede generar consultas aleatorias con parametros distintos sin tener que recargar la pagina**
 
-oprima el boton RANDOM y generara una carta al azar usando patrones digital random
+Seleccione la opcion solonumeros para traer una carta aleatoria de solo numeros, de lo contrario deje esta opcion desmarcada para traer cartas aleatorias
 
 ACTUALIZACIONES: se puede escoger solo cartas con numeros
 
