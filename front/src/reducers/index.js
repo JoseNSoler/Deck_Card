@@ -17,9 +17,20 @@ function random(state = {
     }
 }
 
+function numbers(state = {
+    result: {}
+}, action) {
+    switch (action.type) {
+        case "Numbers": {
+            return { result: action.data }
+        }
+        default: return state
+    }
+}
+
 
 const rootReducer = combineReducers({
-    random
+    random, numbers
 })
 
 export default rootReducer

@@ -13,7 +13,13 @@ Solucion implementando Backend(Java-SpringBoot, MongoAtlas) y FrontEnd(ReactJs, 
 <img src="https://user-images.githubusercontent.com/59320487/160238478-fe497543-ae1e-4418-8fc4-bfa0c5a9c7e2.png">
 </p>
 
+<p align="center">
+<img src="https://user-images.githubusercontent.com/59320487/160242021-7910f437-78d1-4bc3-a018-44d54162aa0c.png">
+</p>
+
 oprima el boton RANDOM y generara una carta al azar usando patrones digital random
+
+ACTUALIZACIONES: se puede escoger solo cartas con numeros
 
 
 Primero se debe ejecutar el back end basado en SpringBoot-Mongo, para ello se debe desplazar hacia la carpeta back, y realizar:

@@ -7,9 +7,13 @@
     width: 100%;
     height: auto;
 
+    flex-direction: column;
+    margin: 8%;
+
 }
 
 .containerCard{
     height: 20vh;
-
+    margin: 5%;
+    display: flex;
 }
