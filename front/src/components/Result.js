@@ -13,11 +13,15 @@ import makeAnimated from 'react-select/animated';
 
 const Result = (props) => {
 
+  const animatedComponents = makeAnimated();
+
   const [state, setState] = useState();
 
   const [btnCheck, setBtnCheck] = useState(false)
   
   const [checked, setChecked] = useState(['numeros']);
+
+  const [ listChecked, setListChecked ] = useState([]);
 
   let itemsSuit = ['DIAMONDS', 'SPADES', 'HEARTS', 'CLUBS'];
 
@@ -28,10 +32,16 @@ const Result = (props) => {
     { value: 'HEARTS', label: 'Hearts' },
     { value: 'CLUBS', label: 'Clubs' }
   ]
-  const animatedComponents = makeAnimated();
+  
 
   const [ suit, setSuit ] = useState()
 
+  const listClick = (e) => {
+    console.log(e)
+    e.preventDefault();
+    console.log("asdasdasdasd")
+    
+  };
 
   const Lists = () => {
     return (
@@ -41,7 +51,8 @@ const Result = (props) => {
         components={animatedComponents}
         defaultValue={[optionsSuit[0], optionsSuit[1]]}
         isMulti
-        options={optionsSuit}/>
+        options={optionsSuit}
+        onChange={(e) => listClick(e)}/>
       </div>
     );
   }
@@ -59,7 +70,7 @@ const Result = (props) => {
 
     console.log(props)
 
-    if(!checked.includes("numeros")) props.dispatch(onlyNumbers2(setState, )) ;
+    if(!checked.includes("numeros")) props.dispatch(onlyNumbers(setState)) ;
     else props.dispatch(fetchRandom(setState)) 
   };
 
