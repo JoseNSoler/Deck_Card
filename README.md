@@ -10,12 +10,9 @@
 Solucion implementando Backend(Java-SpringBoot, MongoAtlas) y FrontEnd(ReactJs, Redux, Bootstrap)
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/59320487/160238478-fe497543-ae1e-4418-8fc4-bfa0c5a9c7e2.png">
+<img src="https://user-images.githubusercontent.com/59320487/160247394-9bff2b1e-8628-45c4-bf8f-939b28ebc3b0.png">
 </p>
 
-<p align="center">
-<img src="https://user-images.githubusercontent.com/59320487/160242021-7910f437-78d1-4bc3-a018-44d54162aa0c.png">
-</p>
 
 **Se puede generar consultas aleatorias con parametros distintos sin tener que recargar la pagina**
 
